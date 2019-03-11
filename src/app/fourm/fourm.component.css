@@ -1,0 +1,42 @@
+
+
+.table{
+    display: table;
+    width: 100%;
+    left: 0;
+    top: 0;
+    
+}
+
+.card{
+    width: 25%;
+    float: left;
+    display: table-cell;
+    height: 19vw;
+    background-color: #C8EE9E;
+    margin: 3vw;
+    box-shadow: 0 2vw 4vw 0 rgba(0, 0, 0, 0.497), 0 2vw 4vw 0 rgba(0, 0, 0, 0.585);
+    border-radius: 2vw;
+    border: solid 5px black
+}
+
+.card:hover{
+    width: 27%;
+    box-shadow: 0 3vw 6vw 0 rgba(0, 0, 0, 0.497), 0 3vw 6vw 0 rgba(0, 0, 0, 0.585);
+}
+
+.two{
+    width: 80%;
+    float: left;
+    display: table-cell;
+}
+
+.two{
+    width: 20%;
+    float: left;
+    display: table-cell;
+}
+
+.img{
+    width: 10rem;
+}

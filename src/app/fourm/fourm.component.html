@@ -1,3 +1,36 @@
-<p>
-  fourm works!
-</p>
+
+
+<h1>Dog Talk</h1>
+
+<div  class="table"  *ngFor="let comment of comment ">
+  <div class="two" > 
+    <img src="../../assets/img/stock/pom.jpg" class="img" />
+   
+    <br>
+    
+    <p> User ID : {{ comment.id }}</p>
+  </div> 
+
+  <div class="three"> 
+    <p>{{ comment.description }} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+  </div>
+    
+    <form (submit)="THEWORLD($event)">
+      <div class="input">
+        <input type="submit" value="Delete">
+      </div>
+    </form>
+    <form (submit)="THEWORLD($event)">
+      <div class="input">
+        <input type="submit" value="Update">
+      </div>
+    </form>
+
+  </div>
+  
+  <form (submit)="THEWORLD($event)">
+
+      <div class="input">
+        <input type="submit" value="Delete">
+      </div>
+    </form>
