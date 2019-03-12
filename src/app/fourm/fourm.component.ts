@@ -33,42 +33,6 @@ public comment = [];
   }
 
 
-THEWORLD(DIO) {
-    DIO.preventDefault(); 
-    console.log(DIO);
-
-    var role = "admin"
-    var token = "GOLDEN EXPERIENCE"
-    this.roleService.adminRole = true
-    this.roleService.userRole = true
-    sessionStorage.setItem('role', role)
-    sessionStorage.setItem('token', token)
-    
-}
-
-userRole(DIO) {
-  DIO.preventDefault(); 
-  console.log(DIO);
-
-  var role = "user"
-  var token = "GOLDEN EXPERIENCE"
-  this.roleService.adminRole = false
-  this.roleService.userRole = true
-  sessionStorage.setItem('role', role)
-  sessionStorage.setItem('token', token)
-  
-}
-
-logout(DIO) {
-  DIO.preventDefault(); 
-
-  sessionStorage.clear();
-  this.roleService.adminRole = false
-  this.roleService.userRole = false
-  
-  
-}
-
 delete(DIO) {
   DIO.preventDefault(); 
   console.log("delete")

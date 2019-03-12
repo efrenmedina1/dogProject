@@ -1,21 +1,7 @@
 
 
 <h1>Dog Talk</h1>
-<form (submit)="THEWORLD($event)">
-    <div class="input">
-      <input type="submit" value="Set Role Admin">
-    </div>
-  </form>
-  <form (submit)="userRole($event)">
-      <div class="input">
-        <input type="submit" value="Set Role user">
-      </div>
-    </form>
-  <form (submit)="logout($event)">
-      <div class="input">
-        <input type="submit" value="Logout">
-      </div>
-    </form>
+
 
     <div class="createPost" *ngIf="roleService.userRole"  > 
     <form (submit)="createPost($event)">

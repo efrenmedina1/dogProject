@@ -1,3 +1,50 @@
-<p>
-  navbar works!
-</p>
+<div class="container-fluid" > 
+  <div class="two" >
+      <div class="two" >
+        <img class="logo" src="../../assets/img/stock/logo.jpg" />
+      </div>
+
+      <div class="two" >
+        <h1>  Efren Branch </h1>
+        
+        <form (submit)="THEWORLD($event)">
+            <div class="input">
+              <input type="submit" value="Set Role Admin">
+            </div>
+          </form>
+          <form (submit)="userRole($event)">
+              <div class="input">
+                <input type="submit" value="Set Role user">
+              </div>
+            </form>
+          <form (submit)="logout($event)">
+              <div class="input">
+                <input type="submit" value="Logout">
+              </div>
+            </form>
+
+
+      </div>
+  </div>
+
+  <div class="two2" >
+
+      <div class="four" routerLink="/home" >
+          <p>Home</p>
+      </div>
+          
+      <div class="four" routerLink="/doglist" >
+          <p>Dogs</p>
+      </div>
+
+      <div class="four" routerLink="/fourm" >
+          <p>Chat</p>
+      </div>
+
+      <div class="four" routerLink="/profile" >
+          <p>Profile</p>
+      </div>
+
+  </div>
+
+</div>
