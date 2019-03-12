@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DogListComponent implements OnInit {
 
+public dog = [];
+
   constructor() { }
 
   ngOnInit() {
