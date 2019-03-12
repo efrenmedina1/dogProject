@@ -1,3 +1,40 @@
-<p>
-  dog-list works!
-</p>
+<h1>Dog List</h1>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<div *ngFor="let dog of dog">
+  
+
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="box">
+  <div class="container">
+    <div class="row">
+
+      <div  *ngFor="let dog of dog"  class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+        <div class="box-part text-center">
+
+          <p><img class=" img-fluid" src="../../assets/english-bulldog.jpg"
+              alt="card image"></p>
+
+          <div class="title">
+            <h4>{{ dog.name }}</h4>
+          </div>
+
+          <div class="text">
+            <span> {{dog.description}} </span>
+          </div>
+
+          <a href="#">Learn More</a>
+
+        </div>
+      </div>
+
+    
+
+   
+
+
+    </div>
+  </div>
+</div>
