@@ -4,4 +4,5 @@ export class dog {
     picture: string;
     age: number;
     description: string;
+    userid: number;
   }
