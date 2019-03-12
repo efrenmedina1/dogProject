@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DOGS } from './dog'
 
 @Component({
   selector: 'app-dog-list',
@@ -12,6 +13,8 @@ public dog = [];
   constructor() { }
 
   ngOnInit() {
+
+    this.dog = DOGS
   }
 
 }
