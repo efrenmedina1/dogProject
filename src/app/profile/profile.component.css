@@ -13,12 +13,11 @@
 }
 
 .three{
-    width: 80%;
+    width: 79%;
     float: left;
     display: table-cell;
     background-color:  rgba( 144,145,137,1);
     color: white;
-    font-size: 1.5rem;
     height: 15rem;
 
 }
@@ -28,7 +27,6 @@
     float: left;
     display: table-cell;
     background-color:  rgba(104,154,153,1);
-    font-size: 1.5rem;
     height: 15rem;
 }
 
@@ -37,6 +35,5 @@
     float: left;
     display: table-cell;
     background-color:  rgba(104,154,153,1);
-    font-size: 1.5rem;
     height: 20rem;
 }

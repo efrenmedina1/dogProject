@@ -1,5 +1,5 @@
 export class dog {
-    breed: number;
+    breed: string;
     name: string;
     picture: string;
     age: number;
