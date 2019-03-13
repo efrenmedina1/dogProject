@@ -1,0 +1,51 @@
+.container-fluid{
+    display: table;
+    width: 100%;
+    left: 0;
+    top: 0;
+    
+    height: 15vh;
+    color: white;
+    
+}
+
+.two{
+    width: 50%;
+    float: left;
+    display: table-cell;
+    margin: 0px;
+    padding: 0px;
+    background-color: black;
+    height: 15vh
+}
+.two2{
+    width: 50%;
+    float: left;
+    display: table-cell;
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+.four{
+    width: 25%;
+    float: left;
+    display: table-cell;
+    margin: 0px;
+    padding: 0px;
+    background-color: black;
+    height: 15vh;
+    text-align: center;
+    font-size: 1.5rem;
+    
+}
+
+.four:hover{
+    background-color: rgba(0, 0, 0, 0.537);
+    
+}
+
+.logo{
+    height: 15vh;
+}
+

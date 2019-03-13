@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PROFILE } from './profile'
+import { DOGS } from '../dog-list/dog'
+import {RoleService } from "../role.service"
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+public profile = [];
+
+  constructor(private roleService: RoleService) { }
 
   ngOnInit() {
+    console.log(DOGS);
+    this.profile = PROFILE
+
+    this.roleService.getToken()
   }
 
 }
