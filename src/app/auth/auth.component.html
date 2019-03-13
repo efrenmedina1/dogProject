@@ -1,3 +1,29 @@
-<p>
-  auth works!
-</p>
+<h1>Sign Up</h1>
+<form (submit)="signUp($event)">
+    <div class="input">
+      <label>Username</label>
+      <input type="text">
+    </div>
+    <div class="input">
+      <label>Password</label>
+      <input type="password">
+    </div>
+    <div class="input">
+      <input type="submit" value="Signup">
+    </div>
+  </form>
+
+<h1> Login </h1>
+  <form (submit)="loginUser($event)">
+      <div class="input">
+        <label>Username</label>
+        <input type="text">
+      </div>
+      <div class="input">
+        <label>Password</label>
+        <input type="password">
+      </div>
+      <div class="input">
+        <input type="submit" value="Login">
+      </div>
+    </form>
