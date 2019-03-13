@@ -39,7 +39,7 @@ public comment = [];
   //   console.log(COMMENTS)
   //  })
   }
-  getComments(){
+  getComments() : any {
     return this.http.get('http://localhost:3000/commentslist/');
 }
 
