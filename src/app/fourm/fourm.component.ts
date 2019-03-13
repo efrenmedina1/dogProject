@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { COMMENTS } from "./comment"
 import {RoleService } from "../role.service"
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-fourm',
@@ -8,16 +9,23 @@ import {RoleService } from "../role.service"
   styleUrls: ['./fourm.component.css']
 })
 export class FourmComponent implements OnInit {
- 
+
 public comment = [];
 
 
-  constructor(private roleService: RoleService) { }
+  constructor(private roleService: RoleService, private http: HttpClient) { }
 
   ngOnInit() {
-    console.log(COMMENTS)
-   this.comment = COMMENTS
 
+  //   console.log(COMMENTS)
+  //  this.comment = COMMENTS
+
+   this.getComments()
+      .subscribe(data => 
+        // console.log(data)
+        this.comment = data.reverse()
+        // console.log(this.products)
+        );
    this.roleService.getToken()
 
   //   fetch('./comment.ts', {
@@ -31,7 +39,9 @@ public comment = [];
   //   console.log(COMMENTS)
   //  })
   }
-
+  getComments(){
+    return this.http.get('http://localhost:3000/commentslist/');
+}
 
 delete(DIO) {
   DIO.preventDefault(); 
@@ -43,14 +53,30 @@ update(DIO) {
   console.log("update")
 }
 
-createPost(DIO) {
-    DIO.preventDefault(); 
-    console.log(DIO);
-    var comment = DIO.target.elements[0].value;
+createPost(e) {
+    e.preventDefault(); 
+    
+    let comment = e.target.elements[0].value;
+    console.log(comment);
+    console.log(this.roleService.token);
 
-        console.log(comment)
+    fetch('http://localhost:3000/comments/', {
+      method: 'POST',
+      body: JSON.stringify(
+        {
+          "description": comment,
+          "userId": 5
+          
+          }
+      ),
+      headers: new Headers({
+        'Content-Type': 'application/json',
+        'Authorization': this.roleService.token
+      })
+    })
+    .then((res) => this.ngOnInit() )
+  }
   
 
 }
 
-}
