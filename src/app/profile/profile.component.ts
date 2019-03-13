@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PROFILE } from './profile'
+import { DOGS } from '../dog-list/dog'
 import {RoleService } from "../role.service"
 
 @Component({
@@ -14,7 +15,7 @@ public profile = [];
   constructor(private roleService: RoleService) { }
 
   ngOnInit() {
-    console.log(PROFILE);
+    console.log(DOGS);
     this.profile = PROFILE
 
     this.roleService.getToken()
