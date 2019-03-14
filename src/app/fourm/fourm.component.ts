@@ -17,6 +17,7 @@ public comment = [];
 
   ngOnInit() {
 
+
   //   console.log(COMMENTS)
   //  this.comment = COMMENTS
   this.roleService.getToken()
@@ -31,6 +32,7 @@ public comment = [];
    
 
  
+
   }
   getComments() : any {
     return this.http.get('http://localhost:3000/commentslist/');
@@ -71,5 +73,7 @@ createPost(e) {
   }
   
 
+
 }
+
 

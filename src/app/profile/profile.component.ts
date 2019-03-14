@@ -18,7 +18,9 @@ public profileTrue = true;
 public profileFalse = false;
 
 
+
   constructor(private roleService: RoleService, private http: HttpClient) { }
+
 
   ngOnInit() {
     
@@ -36,6 +38,7 @@ public profileFalse = false;
 
     
   }
+
 
 //   getProfile() : any {
 //     return this.http.get('http://localhost:3000/profilelist/');
@@ -171,3 +174,4 @@ deleteProfile(e) {
 }
 
 }
+
