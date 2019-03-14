@@ -6,4 +6,5 @@ export class profile {
     email: string;
     phone: string;
     address: string;
+    userid: number;
   }
