@@ -73,7 +73,7 @@ headers: new Headers({
 })
 .then(response =>  sessionStorage.setItem('role', this.roleService.role) )
 .then(response =>  sessionStorage.setItem('token', this.roleService.token) )
-.then(response =>  window.location.reload(false) )
+.then(response =>  window.location.reload )
 }
 
 
