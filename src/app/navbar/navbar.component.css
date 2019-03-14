@@ -4,8 +4,8 @@
     left: 0;
     top: 0;
     
-    height: 15vh;
-    color: white;
+    height: 5vh;
+    color: rgb(87, 207, 255);
     
 }
 
@@ -15,8 +15,8 @@
     display: table-cell;
     margin: 0px;
     padding: 0px;
-    background-color: black;
-    height: 15vh
+    background-color: rgb(83, 83, 83);
+    height: 5vh
 }
 .two2{
     width: 50%;
@@ -33,8 +33,8 @@
     display: table-cell;
     margin: 0px;
     padding: 0px;
-    background-color: black;
-    height: 15vh;
+    background-color: rgb(83, 83, 83);
+    height: 5vh;
     text-align: center;
     font-size: 1.5rem;
     
@@ -42,10 +42,10 @@
 
 .four:hover{
     background-color: rgba(0, 0, 0, 0.537);
+    cursor: pointer;
     
 }
 
 .logo{
-    height: 15vh;
+    height: 5vh;
 }
-
