@@ -17,27 +17,22 @@ public comment = [];
 
   ngOnInit() {
 
+
   //   console.log(COMMENTS)
   //  this.comment = COMMENTS
-
+  this.roleService.getToken()
+  
    this.getComments()
       .subscribe(data => 
         // console.log(data)
         this.comment = data.reverse()
         // console.log(this.products)
         );
-   this.roleService.getToken()
+   
+   
 
-  //   fetch('./comment.ts', {
-  //   method: 'get',
-  //   })
-  //   .then(response => response.json())
-  //   .then(json => {
-  //   this.char = json.results
-  //   })
-  //   .then(json => {
-  //   console.log(COMMENTS)
-  //  })
+ 
+
   }
   getComments() : any {
     return this.http.get('http://localhost:3000/commentslist/');
@@ -78,4 +73,7 @@ createPost(e) {
   }
   
 
+
 }
+
+
