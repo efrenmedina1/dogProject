@@ -42,6 +42,7 @@ export class AuthComponent implements OnInit {
   })
 }
 
+
 loginUser(e) {
   e.preventDefault(); 
   console.log(e);
@@ -68,15 +69,19 @@ headers: new Headers({
   this.roleService.role = json.user.role
   this.roleService.token = json.sessionToken
 
+
   this.router.navigate([''])
   window.alert("Logged in");
 })
 .then(response =>  sessionStorage.setItem('role', this.roleService.role) )
 .then(response =>  sessionStorage.setItem('token', this.roleService.token) )
 .then(response =>  window.location.reload )
+
 }
 
 
   
+
 }
+
 
