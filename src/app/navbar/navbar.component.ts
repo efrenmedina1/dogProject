@@ -48,6 +48,8 @@ logout(DIO) {
   this.roleService.adminRole = false
   this.roleService.userRole = false
   this.roleService.noRole = true
+  window.location.reload();
 }
+
 
 }

@@ -1,4 +1,55 @@
-<div *ngIf="roleService.userRole"  > 
+<div class="createProfile" *ngIf="roleService.userRole"  > 
+
+  <div *ngIf="profileTrue"  >  
+
+  <form (submit)="createProfile($event)">
+      <div class="input"> 
+        <label>Create Your Post</label>
+        <br>
+        <div class="input">
+          <label>Name</label>
+          <input type="name">
+        </div>
+        <div class="input">
+          <label>Age</label>
+          <input type="number">
+        </div>
+        <div class="input">
+          <label>Picture Url</label>
+          <input type="Picture">
+        </div>
+        <div class="input">
+          <label>Email</label>
+          <input type="email">
+        </div>
+        <div class="input">
+          <label>Phone</label>
+          <input type="phone">
+        </div>
+        <div class="input">
+          <label>Address</label>
+          <input type="address">
+        </div>
+        
+        <textarea   
+          class="commentBox" 
+          placeholder="Please put a description"
+          required
+          data-validation-required-message="Please put a description"
+          name="message"
+          maxlength="250"
+                 ></textarea>
+      </div>
+
+      <div class="input">
+        <input type="submit" value="Post Profile">
+      </div>
+    </form>
+    
+  </div>
+</div>
+
+
 
   <div  class="table"  *ngFor="let profile of profile ">
       <div class="two" > 
@@ -18,16 +69,35 @@
         <p> Phone:  {{ profile.phone }} </p>
         <p> Address:  {{ profile.address }} </p>
   
-  
-  
-  
-  
-        </div>
-    
+
+    <div class="three"> 
+      <p>{{ profile.about }} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+    </div>
+
+    <div class="four">
+      <p> Name:  {{ profile.name }} </p>
+      <p> Age:  {{ profile.age }} </p>
+      <p> Email:  {{ profile.email }} </p>
+      <p> Phone:  {{ profile.phone }} </p>
+      <p> Address:  {{ profile.address }} </p>
+
+      <form (submit)="deleteProfile($event)"> 
+        <div>
+     <button type="button" id="{{ profile.id }}" >🗑️ Profile</button>
+    </div>
+    </form>
+
+
+
       </div>
+     
   
-      </div>
-  
-      <div *ngIf="roleService.noRole"  > 
-        <app-auth></app-auth>
-      </div>
+
+    </div>
+
+   
+
+    <div *ngIf="roleService.noRole"  > 
+      <app-auth></app-auth>
+    </div>
+
