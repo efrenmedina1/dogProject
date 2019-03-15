@@ -1,11 +1,11 @@
-.container-fluid{
+.container-fluids{
     display: table;
     width: 100%;
     left: 0;
     top: 0;
     height: 5vh;
     background-color:  rgb(83, 83, 83);
-    position: fixed;
+    
 }
 
 .two{
@@ -22,7 +22,7 @@
     float: left;
     display: table-cell;
     margin: 0px;
-    padding: 0px;
+    padding: 0px; 
     
 }
 
