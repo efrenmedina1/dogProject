@@ -62,21 +62,38 @@ headers: new Headers({
   'Content-Type': 'application/json'
 })
 })
+// res.json()
 .then(response =>  response.json() )
-.then(json => {
+.then(json =>  { 
+  if(json.error == "failed to authenticate") {
+  window.alert( "User does not exisit. Please sign up" );
+  console.log(json);
+} else if(json.error == "You failed to login") {
+  window.alert( "Incorrect Password. Contact admin to reset password" );
+  console.log(json)
+} else {
   console.log(json)
   this.roleService.role = json.user.role
   this.roleService.token = json.sessionToken
 
   this.router.navigate([''])
   window.alert("Logged in");
-})
+}
+} )
+
+// .then(json => {
+//   console.log(json)
+//   this.roleService.role = json.user.role
+//   this.roleService.token = json.sessionToken
+
+//   this.router.navigate([''])
+//   window.alert("Logged in");
+// })
 .then(response =>  sessionStorage.setItem('role', this.roleService.role) )
 .then(response =>  sessionStorage.setItem('token', this.roleService.token) )
-.then(response =>  window.location.reload )
+.then(response =>  window.location.reload() )
 }
 
 
   
 }
-

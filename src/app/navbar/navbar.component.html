@@ -47,7 +47,9 @@
       </div>
 
       <div class="four" routerLink="/profile" >
-          <p>Profile</p>
+
+          <p *ngIf="roleService.userRole" >Profile</p>
+          <p *ngIf="roleService.noRole">Login</p>
       </div>
 
   </div>
