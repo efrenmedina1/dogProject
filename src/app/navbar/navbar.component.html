@@ -38,13 +38,13 @@
       <p>Home</p>
     </div>
 
-    <div class="four" routerLink="/doglist">
-      <p>Dogs</p>
-    </div>
- 
-    <div class="four" routerLink="/fourm">
-      <p>Chat</p>
-    </div>
+
+      <div class="four" routerLink="/profile" >
+
+          <p *ngIf="roleService.userRole" >Profile</p>
+          <p *ngIf="roleService.noRole">Login</p>
+      </div>
+
 
     <div class="four" routerLink="/profile">
       <p>Profile</p>
