@@ -5,8 +5,10 @@ export const DOGS: dog[] = [
     name: "Fluffy",
     picture: "https://t2.ea.ltmcdn.com/en/images/9/0/0/img_names_for_pit_bull_dogs_9_600.jpg",
     age: 4,
-    description: 'Your dog is dookie. He is a embarassment to you and your family. Never speak to me and my dog again.',
+    description: 'mmmmmmmm m   mm  m m m m mm  m m m m m m m m mm  m   mmmmmmmm m   mm  m m m m mm  m m m m m m m m mm  mm m  m mm m  mm mm m  mm m m  mmmmmmmmm m   mm  m m m m mm  m m m m m m m m mm  mmmmmmmmm m   mm  m m m m mm  m m m m m m m m mm  mmmmmmmmm m   mmm',
     userid: 2,
+    
+    
   },
   
   { 
@@ -25,6 +27,7 @@ export const DOGS: dog[] = [
     age: 4,
     description: 'Karens poodle',
     userid: 29,
+    
   },
 
   { 
