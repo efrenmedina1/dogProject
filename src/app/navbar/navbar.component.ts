@@ -11,7 +11,9 @@ export class NavbarComponent implements OnInit {
   constructor(private roleService: RoleService) { }
 
   ngOnInit() {
+    this.roleService.getToken()
   }
+  
 
   THEWORLD(DIO) {
     DIO.preventDefault(); 

@@ -4,7 +4,7 @@
 
   <form (submit)="createProfile($event)">
       <div class="input"> 
-        <label>Create Your Post</label>
+        <label>Create Your Profile</label>
         <br>
         <div class="input">
           <label>Name</label>
@@ -53,13 +53,13 @@
 
 <div  class="table"  *ngFor="let profile of profile ">
     <div class="two" > 
-      <img src=" https://cdn.cnn.com/cnnnext/dam/assets/140619211341-pitbull-rapper-and-artist-1-story-top.jpg  " class="img" />
+      <img src="{{ profile.picture }}" class="img" />
       <br>
   
     </div> 
   
     <div class="three"> 
-      <p>{{ profile.about }} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+      <p>{{ profile.about }}  </p>
     </div>
 
     <div class="four">
@@ -70,15 +70,204 @@
       <p> Address:  {{ profile.address }} </p>
 
       <form (submit)="deleteProfile($event)"> 
+          <input type="submit" value="🗑️Profile" id="{{ profile.id }}" >
+        </form>
+        
+          <form (submit)="createDog($event)">
+              <div class="input"> 
+                <h3>Create a new Dog</h3>
+                <br>
+                <div class="input">
+                  <label>Breed</label>
+                  <input type="breed">
+                </div>
+                <div class="input">
+                  <label>Name</label>
+                  <input type="name">
+                </div>
+                <div class="input">
+                    <label>Age</label>
+                    <input type="age">
+                  </div>
+                <div class="input">
+                  <label>Picture URL</label>
+                  <input type="picture">
+                </div>
+                
+                <textarea   
+                  class="commentBox" 
+                  placeholder="Please put a description"
+                  required
+                  data-validation-required-message="Please put a description"
+                  name="message"
+                  maxlength="250"
+                         ></textarea>
+              </div>
+        
+              <div class="input">
+                <input type="submit" value="Create Dog">
+              </div>
+            </form>
+          </div>
         <div>
-     <button type="button" id="{{ profile.id }}" >🗑️ Profile</button>
-    </div>
-    </form>
+     
 
 
       </div>
-     
-  
+
+
+      <div class="four2">
+          <h2> {{profile.name}}'s Dogs </h2>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <div  *ngFor="let dog of dog"  >
+          <div id="box" class="box">
+            <div class="container">
+              <div class="row">
+          
+                
+          
+                  <div id="card" >
+          
+                    <p><img class=" img-fluid" src="{{dog.picture}}"
+                        alt="card image"></p>
+          
+                    <div class="title">
+                      <h4> {{ dog.name }}</h4>
+                    </div>
+          
+                    <div class="text">
+                      <span> Description: {{dog.description}} </span>
+                    </div>
+          
+                    <div class="text">
+                      <span>Age: {{dog.age}} </span>
+                    </div>
+          
+                    <div class="text">
+                        <span>Breed: {{dog.breed}} </span>
+                      </div>
+
+                      <form (submit)="deleteDog($event)"> 
+                          <input type="submit" value="🗑️Dog" id="{{ dog.id }}" >
+                        </form>
+                        <form (submit)="dogUpdate($event)">
+                            <div class="input"> 
+                              <h3>Create a new Dog</h3>
+                              <br>
+                              <div class="input">
+                                <label>Breed</label>
+                                <input type="breed" value="{{dog.breed}}" >
+                              </div>
+                              <div class="input">
+                                <label>Name</label>
+                                <input type="name" value="{{dog.name}}" >
+                              </div>
+                              <div class="input">
+                                  <label>Age</label>
+                                  <input type="age" value="{{dog.age}}" >
+                                </div>
+                              <div class="input">
+                                <label>Picture URL</label>
+                                <input type="picture" value="{{dog.picture}}" >
+                              </div>
+                              
+                              <textarea   
+                                class="commentBox" 
+                                placeholder="Please put a description"
+                                required
+                                data-validation-required-message="Please put a description"
+                                name="message"
+                                maxlength="250"
+                                value="{{dog.description}}"   ></textarea>
+                            </div>
+                      
+                            <div class="input">
+                              <input id=" {{dog.id}} " type="submit" value="Update Dog">
+                            </div>
+                          </form>
+                 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+
+      <div class="four3">
+          <h2> {{profile.name}}'s Comments </h2>
+          <div  class="table"  *ngFor="let comment of comment ">
+             
+              <div class="comment"> 
+                <p>{{ comment.description }}</p>
+              </div>
+            
+                <div *ngIf="roleService.adminRole"  > 
+                <form (submit)="delete($event)">
+                  <div class="input">
+                    <input type="submit" value="Delete">
+                  </div>
+                </form>
+                <form (submit)="update($event)">
+                  <div class="input">
+                    <input type="submit" value="Update">
+                  </div>
+                </form>
+              </div>
+              </div>
+       </div>
+
+    </div>
+
+    <div  class="table"  *ngFor="let profile of profile ">
+        <div *ngIf="roleService.userRole" >  
+
+            <form (submit)="profileUpdate($event)">
+                <div class="input"> 
+                  <label>Update Your Profile</label>
+                  <br>
+                  <div class="input">
+                    <label>Name</label>
+                    <input type="name" value="{{profile.name}}" >
+                  </div>
+                  <div class="input">
+                    <label>Age</label>
+                    <input type="number" value="{{profile.age}}" >
+                  </div>
+                  <div class="input">
+                    <label>Picture Url</label>
+                    <input type="Picture" value="{{profile.picture}}" >
+                  </div>
+                  <div class="input">
+                    <label>Email</label>
+                    <input type="email" value="{{profile.email}}" >
+                  </div>
+                  <div class="input">
+                    <label>Phone</label>
+                    <input type="phone" value="{{profile.phone}}" >
+                  </div>
+                  <div class="input">
+                    <label>Address</label>
+                    <input type="address" value="{{profile.address}}" >
+                  </div>
+                  
+                  <textarea   
+                    class="commentBox" 
+                    placeholder="Please put a description"
+                    required
+                    data-validation-required-message="Please put a description"
+                    name="message"
+                    maxlength="250"
+                    value="{{profile.about}}"
+                           ></textarea>
+                </div>
+          
+                <div class="input">
+                  <input type="submit" id="{{profile.id}}" value="Update Profile">
+                </div>
+              </form>
+              
+            </div>
     </div>
 
    
