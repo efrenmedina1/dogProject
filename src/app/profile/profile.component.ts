@@ -13,7 +13,8 @@ import { profile } from './profileModel';
 export class ProfileComponent implements OnInit {
 
 public profile = [];
-public dogs = [];
+public dog = [];
+public comment = [];
 public profileTrue = true;
 public profileFalse = false;
 
@@ -33,6 +34,7 @@ public profileFalse = false;
       // this.getProfilelength()
 
       this.getDogs()
+      this.getComments()
 
     
   }
@@ -52,20 +54,19 @@ getProfile = () => {
   .then(response =>{  response.json()
   .then(data => {
     this.profile = data;
-    console.log(data)
-    console.log(this.roleService.token)
-    console.log(this.profile)
+    // console.log(data)
+    // console.log(this.roleService.token)
+    // console.log(this.profile)
     
   })
   .then(data => {
-    console.log(data)
     if(this.profile.length == 1  ){
-      console.log(this.profile.length)
+      // console.log(this.profile.length)
       this.profileTrue = false
       this.profileFalse = true
     } else {
       this.profileTrue = true
-      console.log(this.profile.length)
+      // console.log(this.profile.length)
       this.profileFalse = false
     }
     
@@ -86,10 +87,30 @@ getDogs = () => {
 
   .then(response =>{  response.json()
   .then(data => {
-    this.dogs = data;
-    console.log(data)
-    console.log(this.roleService.token)
-    console.log(this.profile)
+    this.dog = data;
+    // console.log(data)
+    // console.log(this.roleService.token)
+    // console.log(this.profile)
+    this.roleService.getToken()
+  });
+})
+}
+
+getComments = () => {
+  fetch('http://localhost:3000/comments/',{
+    method: 'GET',
+    headers: new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': this.roleService.token
+    })
+  })
+
+  .then(response =>{  response.json()
+  .then(data => {
+    this.comment = data;
+    // console.log(data)
+    // console.log(this.roleService.token)
+    // console.log(this.comment)
     this.roleService.getToken()
   });
 })
@@ -116,11 +137,12 @@ createProfile(e) {
   
   let name = e.target.elements[0].value;
   let age = e.target.elements[1].value;
-  let about = e.target.elements[6].value;
   let picture = e.target.elements[2].value;
   let email = e.target.elements[3].value;
   let phone = e.target.elements[4].value;
   let address = e.target.elements[5].value;
+  let about = e.target.elements[6].value;
+  
   console.log(e.target.elements.value);
   console.log(this.roleService.token);
   console.log(age);
@@ -148,26 +170,151 @@ createProfile(e) {
   .then((res) => this.ngOnInit() )
 }
 
+profileUpdate = (e) => {
+  let name = e.target.elements[0].value;
+  let age = e.target.elements[1].value;
+  let picture = e.target.elements[2].value;
+  let email = e.target.elements[3].value;
+  let phone = e.target.elements[4].value;
+  let address = e.target.elements[5].value;
+  let about = e.target.elements[6].value;
+  let profileID = e.target.elements[7].id;
+
+  console.log(profileID)
+
+  fetch(`http://localhost:3000/profile/${profileID}`, {
+    method: 'PUT',
+    body: JSON.stringify(
+      {
+        "name": name,
+        "age": age,
+        "about": about,
+        "picture": picture,
+        "email": email,
+        "phone": phone,
+        "address": address,
+        
+
+        
+        }
+    ),
+    headers: new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': this.roleService.token
+    })
+  })
+  .then(response => console.log(response))
+  .then((res) => this.ngOnInit() )
+  .then((res) => window.alert("Updated Profile") )
+  
+  
+}
+
+
+createDog(e) {
+  e.preventDefault(); 
+  
+  let breed = e.target.elements[0].value;
+  let name = e.target.elements[1].value;
+  let age = e.target.elements[2].value;
+  let picture = e.target.elements[3].value;
+  let description = e.target.elements[4].value;
+ 
+  
+  // console.log(this.roleService.token);
+  // console.log(age);
+
+  fetch('http://localhost:3000/dogs/', {
+    method: 'POST',
+    body: JSON.stringify(
+      {
+        "breed": breed,
+        "name": name,
+        "age": age,
+        "picture": picture,
+        "description": description,
+        "userId": "1"
+        
+        }
+    ),
+    headers: new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': this.roleService.token
+    })
+  })
+  .then((res) => this.ngOnInit() )
+}
+
+dogUpdate = (e) => {
+  let breed = e.target.elements[0].value;
+  let name = e.target.elements[1].value;
+  let age = e.target.elements[2].value;
+  let picture = e.target.elements[3].value;
+  let description = e.target.elements[4].value;
+  let dogID = e.target.elements[5].id;
+
+  console.log(dogID)
+
+  fetch(`http://localhost:3000/dogs/${dogID}`, {
+    method: 'PUT',
+    body: JSON.stringify(
+       {
+        "breed": breed,
+        "name": name,
+        "age": age,
+        "picture": picture,
+        "description": description,
+        
+      }
+    ),
+    headers: new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': this.roleService.token
+    })
+  })
+  .then(response => console.log(response))
+  .then((res) => this.ngOnInit() )
+  
+}
+
+
 deleteProfile(e) {
   e.preventDefault();
   console.log('delete');
   var delID = e.target.elements[0].id;
-  var delUrl = `http://localhost:3000/profile/${delID}`;
   var token = this.roleService.token;
   console.log(token);
+  console.log(delID);
 
-  fetch(delUrl, {
+  fetch(`http://localhost:3000/profile/${delID}`, {
     method: 'DELETE',
     headers: new Headers({
       Authorization: token
     })
-  }).then(response => response.json())
-    .then(json => { console.log(json)})
+  })
+    .then(json => { window.location.reload();})
 
-    .then(refresh =>
-      this.ngOnInit()
     
-      ) 
+}
+
+
+deleteDog(e) {
+  e.preventDefault();
+  console.log('delete');
+  var delID = e.target.elements[0].id;
+  var token = this.roleService.token;
+  console.log(token);
+  console.log(delID);
+
+  fetch(`http://localhost:3000/dogs/${delID}`, {
+    method: 'DELETE',
+    headers: new Headers({
+      Authorization: token
+    })
+  })
+    .then((res) => this.ngOnInit() )
+
+    
 }
 
 }

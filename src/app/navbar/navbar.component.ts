@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RoleService } from "../role.service"
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-navbar',
@@ -8,10 +9,12 @@ import {RoleService } from "../role.service"
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private roleService: RoleService) { }
+  constructor(private router: Router, private roleService: RoleService) { }
 
   ngOnInit() {
+    this.roleService.getToken()
   }
+  
 
   THEWORLD(DIO) {
     DIO.preventDefault(); 
@@ -41,14 +44,14 @@ userRole(DIO) {
   
 }
 
-logout(DIO) {
-  DIO.preventDefault(); 
+logout(e) {
+  e.preventDefault(); 
 
   sessionStorage.clear();
   this.roleService.adminRole = false
   this.roleService.userRole = false
   this.roleService.noRole = true
-  window.location.reload();
+  this.router.navigate(['home'])
 }
 
 

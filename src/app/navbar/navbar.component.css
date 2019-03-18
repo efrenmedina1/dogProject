@@ -1,10 +1,12 @@
-.container-fluid{
+.container-fluids{
     display: table;
     width: 100vw;
     left: 0;
     top: 0;
     padding: 0;
     color: rgb(87, 207, 255);
+    height: 5vh;
+    background-color:  rgb(83, 83, 83);
     
 }
 
@@ -22,7 +24,7 @@
     float: left;
     display: table-cell;
     margin: 0px;
-    padding: 0px;
+    padding: 0px; 
     
 }
 
@@ -36,6 +38,7 @@
     height: 5vh;
     text-align: center;
     font-size: 1.5rem;
+    color: rgb(87, 207, 255);
     
 }
 
@@ -48,3 +51,10 @@
 .logo{
     height: 5vh;
 }
+.nav-link{
+    color: rgb(87,207, 255);
+    font-size: 3vh;
+    text-align: right
+    
+}
+

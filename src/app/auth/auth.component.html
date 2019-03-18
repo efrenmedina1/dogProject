@@ -1,30 +1,56 @@
 
-<h1>Sign Up</h1>
-<form (submit)="signUp($event)">
-    <div class="input">
-      <label>Username</label>
-      <input type="text">
-    </div>
-    <div class="input">
-      <label>Password</label>
-      <input type="password">
-    </div>
-    <div class="input">
-      <input type="submit" value="Signup">
-    </div>
-  </form>
+    <mat-toolbar>
+      <span>Login/Sign Up</span>
+    </mat-toolbar>
+    <mat-card class="my-card">
+      <mat-card-content>
 
-<h1> Login </h1>
-  <form (submit)="loginUser($event)">
-      <div class="input">
-        <label>Username</label>
-        <input type="text">
-      </div>
-      <div class="input">
-        <label>Password</label>
-        <input type="password">
-      </div>
-      <div class="input">
-        <input type="submit" value="Login">
-      </div>
-    </form> 
+        <form class="my-form" (submit)="signUp($event)">
+       
+            <mat-toolbar>
+              <span>Sign Up</span>
+            </mat-toolbar>
+            <mat-card class="my-card">
+               <mat-card-content>
+            
+                       <label>Username</label>
+                        <input  matInput   name="Username">
+                    <br> 
+                    <br> 
+                        <label>Password</label>
+                        
+                        <input  matInput name="password" type="password" >
+               </mat-card-content>
+               <mat-card-actions>
+                  <button mat-raised-button (click)="submit" color="gray">LOGIN</button>
+               </mat-card-actions>
+          
+      </mat-card>
+      
+    </form>
+<br>
+    <form class="my-form" (submit)="loginUser($event)">
+       
+        <mat-toolbar>
+          <span>Sign Up</span>
+        </mat-toolbar>
+        <mat-card class="my-card">
+           <mat-card-content>
+        
+                   <label>Username</label>
+                    <input  matInput   name="Username">
+                <br> 
+                <br> 
+                    <label>Password</label>
+                    
+                    <input  matInput name="password" type="password" >
+           </mat-card-content>
+           <mat-card-actions>
+              <button mat-raised-button (click)="submit" color="gray">LOGIN</button>
+           </mat-card-actions>
+      
+  </mat-card>
+  
+</form>
+
+ 

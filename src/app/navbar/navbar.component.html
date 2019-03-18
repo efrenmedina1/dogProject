@@ -1,7 +1,7 @@
 
       
 
-<div class="container-fluid" > 
+<div class="container-fluids" > 
   <div class="two" >
       <div class="two" >
         <img class="logo" src="../../assets/img/stock/logo.jpg" />
@@ -47,7 +47,9 @@
       </div>
 
       <div class="four" routerLink="/profile" >
-          <p>Profile</p>
+
+          <p *ngIf="roleService.userRole" >Profile</p>
+          <p *ngIf="roleService.noRole">Login</p>
       </div>
 
   </div>

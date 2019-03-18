@@ -1,3 +1,28 @@
+.my-form{
+    
+    width: 100%;
+  }
+
+  .my-card{
+    
+    padding: 5%;
+  }
+   
+  .full-width {
+    width: 100%;
+  }
+
+  .label{
+      width: 30%;
+      float: left;
+  }
+
+  .labeldescription{
+      margin-top: 1rem;
+      padding-left: 5vw;
+      padding-right: 5vw;
+  }
+
 .table{
     display: table;
     width: 100%;
@@ -6,6 +31,18 @@
     margin-bottom: 4vw;
     
 }
+.table{
+    display: table;
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding: 4%;
+    
+}
+
+.input{
+    float: right;
+}
 
 .img{
     width: 100%;
@@ -13,27 +50,65 @@
 }
 
 .three{
-    width: 79%;
+    width: 69%;
     float: left;
     display: table-cell;
     background-color:  rgba( 144,145,137,1);
     color: white;
-    height: 15rem;
+    height: 40vh;
+    font-size: 150%;
+    padding: 1%;
 
 }
 
 .two{
-    width: 20%;
+    width: 30%;
     float: left;
     display: table-cell;
     background-color:  rgba(104,154,153,1);
-    height: 15rem;
+    height: 40vh;
 }
 
+
 .four{
-    width: 20%;
+    width: 30%;
     float: left;
     display: table-cell;
     background-color:  rgba(104,154,153,1);
-    height: 20rem;
+    padding: 1%;
 }
+
+.four2{
+    width: 30%;
+    float: left;
+    display: table-cell;
+    background-color:  white;
+    padding: 1%;
+    margin-left:  4.5%;
+}
+
+.four3{
+    width: 30%;
+    float: left;
+    display: table-cell;
+    background-color:  rgba(104,154,153,1);
+    padding: 1%;
+    margin-left:  4.5%;
+}
+
+#box{
+ box-shadow: 0 2vw 4vw 0 rgb(87, 207, 255), 0 2vw 4vw 0 rgba(87, 207, 255);
+ margin-bottom: 4vw;
+ padding: 3%;
+}
+
+#card{
+    text-align: center;
+}
+
+
+.commentBox{
+    width: 100%;
+    height: 15vh;
+}
+
