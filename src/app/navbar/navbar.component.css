@@ -1,8 +1,10 @@
 .container-fluids{
     display: table;
-    width: 100%;
+    width: 100vw;
     left: 0;
     top: 0;
+    padding: 0;
+    color: rgb(87, 207, 255);
     height: 5vh;
     background-color:  rgb(83, 83, 83);
     
