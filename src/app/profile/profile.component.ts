@@ -92,7 +92,7 @@ getDogs = () => {
     // console.log(data)
     // console.log(this.roleService.token)
     // console.log(this.profile)
-    this.roleService.getToken()
+    this.roleService.getToken() 
   });
 })
 }
