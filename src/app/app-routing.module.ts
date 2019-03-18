@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'fourm', component: FourmComponent },
   { path: 'doglist', component: DogListComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: '', component: HomeComponent  },
   { path: '**', redirectTo: '' }
 ];
 
