@@ -4,6 +4,7 @@ import { DOGS } from '../dog-list/dog'
 import {RoleService } from "../role.service"
 import { HttpClient } from '@angular/common/http';
 import { profile } from './profileModel';
+import { APIURL } from '../../environments/environment.prod';
 
 @Component({
   selector: 'app-profile',
@@ -43,7 +44,7 @@ public profileFalse = false;
 //     return this.http.get('http://localhost:3000/profilelist/');
 // }
 getProfile = () => {
-  fetch('http://localhost:3000/profile/',{
+  fetch(`${APIURL}/profile/`,{
     method: 'GET',
     headers: new Headers({
       'Content-Type': 'application/json',
@@ -77,7 +78,7 @@ getProfile = () => {
 }
 
 getDogs = () => {
-  fetch('http://localhost:3000/dogs/',{
+  fetch(`${APIURL}/dogs/`,{
     method: 'GET',
     headers: new Headers({
       'Content-Type': 'application/json',
@@ -97,7 +98,7 @@ getDogs = () => {
 }
 
 getComments = () => {
-  fetch('http://localhost:3000/comments/',{
+  fetch(`${APIURL}/comments/`,{
     method: 'GET',
     headers: new Headers({
       'Content-Type': 'application/json',
@@ -147,7 +148,7 @@ createProfile(e) {
   console.log(this.roleService.token);
   console.log(age);
 
-  fetch('http://localhost:3000/profile/', {
+  fetch(`${APIURL}/profile/`, {
     method: 'POST',
     body: JSON.stringify(
       {
@@ -182,7 +183,7 @@ profileUpdate = (e) => {
 
   console.log(profileID)
 
-  fetch(`http://localhost:3000/profile/${profileID}`, {
+  fetch(`${APIURL}/profile/${profileID}`, {
     method: 'PUT',
     body: JSON.stringify(
       {
@@ -224,7 +225,7 @@ createDog(e) {
   // console.log(this.roleService.token);
   // console.log(age);
 
-  fetch('http://localhost:3000/dogs/', {
+  fetch(`${APIURL}/dogs/`, {
     method: 'POST',
     body: JSON.stringify(
       {
@@ -255,7 +256,7 @@ dogUpdate = (e) => {
 
   console.log(dogID)
 
-  fetch(`http://localhost:3000/dogs/${dogID}`, {
+  fetch(`${APIURL}/dogs/${dogID}`, {
     method: 'PUT',
     body: JSON.stringify(
        {
@@ -286,7 +287,7 @@ deleteProfile(e) {
   console.log(token);
   console.log(delID);
 
-  fetch(`http://localhost:3000/profile/${delID}`, {
+  fetch(`${APIURL}/profile/${delID}`, {
     method: 'DELETE',
     headers: new Headers({
       Authorization: token
@@ -306,7 +307,7 @@ deleteDog(e) {
   console.log(token);
   console.log(delID);
 
-  fetch(`http://localhost:3000/dogs/${delID}`, {
+  fetch(`${APIURL}/dogs/${delID}`, {
     method: 'DELETE',
     headers: new Headers({
       Authorization: token

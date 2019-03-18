@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { COMMENTS } from "./comment"
 import {RoleService } from "../role.service"
 import { HttpClient } from '@angular/common/http';
+import { APIURL } from '../../environments/environment.prod';
+
 
 @Component({
   selector: 'app-fourm',
@@ -33,7 +35,7 @@ public comment = [];
  
   }
   getComments() : any {
-    return this.http.get('http://localhost:3000/commentslist/');
+    return this.http.get(`${APIURL}/commentslist/`);
 }
 
 delete(DIO) {
@@ -53,7 +55,7 @@ createPost(e) {
     console.log(comment);
     console.log(this.roleService.token);
 
-    fetch('http://localhost:3000/comments/', {
+    fetch(`${APIURL}/comments/`, {
       method: 'POST',
       body: JSON.stringify(
         {

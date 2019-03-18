@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DOGS } from './dog'
 import {RoleService } from "../role.service"
 import { HttpClient } from '@angular/common/http';
+import { APIURL } from '../../environments/environment.prod';
 
 @Component({
   selector: 'app-dog-list',
@@ -27,6 +28,6 @@ public dog = [];
  
   }
   getDogs() : any {
-    return this.http.get('http://localhost:3000/doglist/');
+    return this.http.get(`${APIURL}/doglist/`);
 }
 }

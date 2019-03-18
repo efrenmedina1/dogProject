@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
 import {RoleService } from "../role.service"
+import { APIURL } from '../../environments/environment.prod';
 
 @Component({
   selector: 'app-auth',
@@ -19,7 +20,7 @@ export class AuthComponent implements OnInit {
     var username = e.target.elements[0].value;
     var password = e.target.elements[1].value;
   console.log(username, password);
-  fetch('http://localhost:3000/user', {
+  fetch(`${APIURL}/user`, {
   method: 'POST',
   body: JSON.stringify({
     "user": {
@@ -48,7 +49,7 @@ loginUser(e) {
   var username = e.target.elements[0].value;
   var password = e.target.elements[1].value;
 console.log(username, password);
-fetch('http://localhost:3000/user/login', {
+fetch(`${APIURL}/user/login`, {
 method: 'POST',
 body: JSON.stringify(
   {
