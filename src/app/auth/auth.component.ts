@@ -76,7 +76,7 @@ headers: new Headers({
   this.roleService.role = json.user.role
   this.roleService.token = json.sessionToken
 
-  this.router.navigate([''])
+  this.router.navigate(['home'])
   window.alert("Logged in");
 }
 } )
@@ -91,7 +91,7 @@ headers: new Headers({
 // })
 .then(response =>  sessionStorage.setItem('role', this.roleService.role) )
 .then(response =>  sessionStorage.setItem('token', this.roleService.token) )
-.then(response =>  window.location.reload() )
+// .then(response =>  window.location.reload() )
 }
 
 

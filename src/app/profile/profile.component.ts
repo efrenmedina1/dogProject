@@ -205,6 +205,8 @@ profileUpdate = (e) => {
   })
   .then(response => console.log(response))
   .then((res) => this.ngOnInit() )
+  .then((res) => window.alert("Updated Profile") )
+  
   
 }
 
