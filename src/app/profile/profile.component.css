@@ -12,10 +12,34 @@
     width: 100%;
   }
 
-  .label{
-      width: 30%;
+  .label1{
+      width: 20%;
       float: left;
   }
+  .label2{
+    width: 15%;
+    float: left;
+}
+.label3{
+    width: 60%;
+    float: left;
+}
+.label4{
+    width: 40%;
+    float: left;
+}
+.label5{
+    width: 30%;
+    float: left;
+}
+.label6{
+    width: 80%;
+    float: left;
+}
+.label7{
+    width: 80%;
+    float: left;
+}
 
   .labeldescription{
       margin-top: 1rem;
