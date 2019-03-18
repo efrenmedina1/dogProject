@@ -1,8 +1,63 @@
 <div class="createProfile" *ngIf="roleService.userRole"  > 
 
   <div *ngIf="profileTrue"  >  
+    
 
-  <form (submit)="createProfile($event)">
+            <form class="my-form" (submit)="createProfile($event)">
+           
+                <mat-toolbar>
+                  <span>Make your Profile</span>
+                </mat-toolbar>
+                <mat-card class="my-card">
+                   <mat-card-content>
+                          <div class="label" >
+                            <input class="input" matInput   name="name"  type="name" >
+                            <label class="input" >Name</label>
+                          </div>
+                          <div class="label" >
+                            <input class="input"  matInput   name="age"  type="age" >
+                            <label class="input" >Age</label>
+                          </div>
+                          <div class="label" >
+                            <input class="input" matInput   name="url"  type="url" >
+                            <label class="input" >Picture</label>
+                          </div>
+                          <div class="label" >
+                            <input class="input" matInput   name="email"  type="email" style="width: 20rem;" >
+                            <label class="input" >Email</label>
+                          </div>
+                          <div class="label" >
+                            <input class="input" matInput   name="phone"  type="phone" >
+                            <label class="input" >Phone</label>
+                          </div>
+                          <div class="label" >
+                            <input class="input" matInput   name="address"  type="address" style="width: 20rem;" >
+                            <label class="input" >Address</label>
+                          </div>
+                          <div class="labeldescription" >
+                          <textarea   
+                          class="commentBox" 
+                          placeholder="Please put a description"
+                          required
+                          data-validation-required-message="Please put a description"
+                          name="message"
+                          maxlength="250"
+                                 ></textarea>
+                         </div>
+                          
+                        
+                            
+                            
+                   </mat-card-content>
+                   
+              
+          </mat-card>
+          <br>
+          <button mat-raised-button (click)="submit" color="gray">Create Profile</button>
+          
+        </form>
+
+  <!-- <form (submit)="createProfile($event)">
       <div class="input"> 
         <label>Create Your Profile</label>
         <br>
@@ -44,7 +99,10 @@
       <div class="input">
         <input type="submit" value="Post Profile">
       </div>
-    </form>
+    </form> -->
+
+
+    
     
   </div>
 </div>
@@ -221,8 +279,62 @@
 
     <div  class="table"  *ngFor="let profile of profile ">
         <div *ngIf="roleService.userRole" >  
+            <form class="my-form" (submit)="profileUpdate($event)">
+           
+                <mat-toolbar>
+                  <span>Make your Profile</span>
+                </mat-toolbar>
+                <mat-card class="my-card">
+                   <mat-card-content>
+                          <div class="label" >
+                            <input class="input" matInput   name="name"  type="name" value="{{profile.name}}" >
+                            <label class="input" >Name</label>
+                          </div>
+                          <div class="label" >
+                            <input class="input"  matInput   name="age"  type="age" value="{{profile.age}}" >
+                            <label class="input" >Age</label>
+                          </div>
+                          <div class="label" >
+                            <input class="input" matInput   name="url"  type="url" value="{{profile.picture}}" >
+                            <label class="input" >Picture</label>
+                          </div>
+                          <div class="label" >
+                            <input class="input" matInput   name="email"  type="email" style="width: 20rem;" value="{{profile.email}}" >
+                            <label class="input" >Email</label>
+                          </div>
+                          <div class="label" >
+                            <input class="input" matInput   name="phone"  type="phone" value="{{profile.phone}}" >
+                            <label class="input" >Phone</label>
+                          </div>
+                          <div class="label" >
+                            <input class="input" matInput   name="address"  type="address" style="width: 20rem;" value="{{profile.address}}" >
+                            <label class="input" >Address</label>
+                          </div>
+                          <div class="labeldescription" >
+                          <textarea   
+                          class="commentBox" 
+                          placeholder="Please put a description"
+                          required
+                          data-validation-required-message="Please put a description"
+                          name="message"
+                          maxlength="250"
+                          value="{{profile.about}}"
+                                 ></textarea>
+                         </div>
+                          
+                        
+                            
+                            
+                   </mat-card-content>
+                   
+              
+          </mat-card>
+          <br>
+          <button id="{{profile.id}}" mat-raised-button (click)="submit" color="gray">Update Profile</button>
+          
+        </form>
 
-            <form (submit)="profileUpdate($event)">
+            <!-- <form (submit)="profileUpdate($event)">
                 <div class="input"> 
                   <label>Update Your Profile</label>
                   <br>
@@ -268,7 +380,7 @@
               </form>
               
             </div>
-    </div>
+    </div> -->
 
    
 

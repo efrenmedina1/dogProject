@@ -1,7 +1,7 @@
  .list {
-    height: 62vh;
+    height: 70vh;
     width: 30%;
-    box-shadow: 10px 10px 30px rgb(90, 89, 89);
+    /* box-shadow: 10px 10px 30px rgb(90, 89, 89); */
     margin: 17px;
     color: rgb(87, 207, 255);
     overflow-x: hidden;
@@ -9,7 +9,7 @@
 }
 
 #card{
-    height: 58vh;
+    height: 65vh;
     background-color: rgb(90, 89, 89)
 }
 
@@ -85,8 +85,8 @@
         background: rgb(83, 83, 83);
     }
      
-    .card, .card-img-top {
+    /* .card, .card-img-top {
     border-radius: 0;
-    }
+    } */
 
    

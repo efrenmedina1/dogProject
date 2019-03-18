@@ -1,3 +1,28 @@
+.my-form{
+    
+    width: 100%;
+  }
+
+  .my-card{
+    
+    padding: 5%;
+  }
+   
+  .full-width {
+    width: 100%;
+  }
+
+  .label{
+      width: 30%;
+      float: left;
+  }
+
+  .labeldescription{
+      margin-top: 1rem;
+      padding-left: 5vw;
+      padding-right: 5vw;
+  }
+
 .table{
     display: table;
     width: 100%;
