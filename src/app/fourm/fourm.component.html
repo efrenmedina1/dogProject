@@ -40,14 +40,14 @@
     <div *ngIf="roleService.adminRole"  > 
     <form (submit)="delete($event)">
       <div class="input">
-        <input type="submit" value="Delete">
+        <input id="{{comment.id}}" type="submit" value="Delete">
       </div>
     </form>
-    <form (submit)="update($event)">
+    <!-- <form (submit)="update($event)">
       <div class="input">
         <input type="submit" value="Update">
       </div>
-    </form>
+    </form> -->
   </div>
 
   </div>

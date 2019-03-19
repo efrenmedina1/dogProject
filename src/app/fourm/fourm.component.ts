@@ -38,8 +38,21 @@ public comment = [];
     return this.http.get(`${APIURL}/commentslist/`);
 }
 
-delete(DIO) {
-  DIO.preventDefault(); 
+delete(e) {
+  e.preventDefault();
+  console.log('delete');
+  var delID = e.target.elements[0].id;
+  var token = this.roleService.token;
+  console.log(token);
+  console.log(delID);
+
+  fetch(`${APIURL}/comments/${delID}`, {
+    method: 'DELETE',
+    headers: new Headers({
+      Authorization: token
+    })
+  })
+    .then((res) => this.ngOnInit() )
   console.log("delete")
 }
 
